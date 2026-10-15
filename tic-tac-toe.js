@@ -53,4 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
     sq.addEventListener('mouseover', () => sq.classList.add('hover'));
     sq.addEventListener('mouseout', () => sq.classList.remove('hover'));
   });
+
+  // Exercise 5: restart the game
+  newGameBtn.addEventListener('click', () => {
+    state = Array(9).fill(null);
+    currentPlayer = 'X';
+    gameOver = false;
+
+    squares.forEach(sq => {
+      sq.textContent = '';
+      sq.classList.remove('X', 'O', 'hover');
+    });
+
+    status.textContent = originalMessage;
+    status.classList.remove('you-won');
+  });
+
 });
